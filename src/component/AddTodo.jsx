@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import Dropdown from 'react-bootstrap/Dropdown';
 import MyVerticallyCenteredModal from './TodoModel';
+import { useSelector } from 'react-redux';
 
 function AddTodo() {
   const [modalShow, setModalShow] = useState(false);
-    const todoItems=()=>{
+  const todo=useSelector(state=>state)
+  console.log(todo)
+    const todoItems=(data)=>{
         
     }
   return (
@@ -25,6 +28,7 @@ function AddTodo() {
     <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        handleData={todoItems}
       />
 </div>
 
